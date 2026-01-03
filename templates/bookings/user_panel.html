@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Appointments</h2>
+<table class="table table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Action</th> </tr>
+    </thead>
+    <tbody>
+        {% for appt in appointments %}
+        <tr>
+            <td>{{ appt.service.name }}</td>
+            <td>{{ appt.date }}</td>
+            <td>{{ appt.timeslot }}</td>
+            <td>
+                <span class="badge {% if appt.status == 'confirmed' %}bg-success{% elif appt.status == 'pending' %}bg-warning{% else %}bg-danger{% endif %}">
+                    {{ appt.status|title }}
+                </span>
+            </td>
+            <td>
+                {% if appt.status == 'pending' %}
+                <a href="{% url 'cancel_appointment' appt.id %}" 
+                   class="btn btn-sm btn-danger" 
+                   onclick="return confirm('Are you sure you want to cancel this appointment?')">
+                   Cancel
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No appointments found.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

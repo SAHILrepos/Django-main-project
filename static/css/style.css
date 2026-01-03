@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    font-family: "Zalando Sans Expanded", sans-serif;
+    box-sizing: border-box; 
+}
+
+body { 
+    background-color: #f8f9fa; 
+    font-family: "Zalando Sans Expanded", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+input, select, textarea {
+    font-family: "Zalando Sans Expanded", sans-serif !important;
+    padding: 12px 15px !important;
+    height: auto !important;       
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px !important;
+    display: block;
+    width: 100%;
+}
+
+.card { 
+    margin-top: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 25px !important;
+    transition: all 0.3s ease; 
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.status-confirmed { 
+    color: green; 
+    font-weight: bold; 
+}
+
+.status-pending { 
+    color: orange; 
+}
+
+button, .btn {
+    font-family: "Zalando Sans Expanded", sans-serif !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    border: none;
+    transition: all 0.3s ease; 
+}
+
+.btn-primary {
+    background-color: #0d6efd; 
+}
+
+.btn-primary:hover {
+    border-radius: 25px !important; 
+    transform: scale(1.05);       
+    background-image: linear-gradient(to bottom right, #4b93ff, #0d6efd);
+    box-shadow: 0 8px 15px rgba(13, 110, 253, 0.3); 
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+    background-image: linear-gradient(to bottom right, #0a58ca, #084298); 
+    box-shadow: none;
+}

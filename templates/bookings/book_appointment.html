@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4">
+            <h2 class="text-center">Schedule Appointment</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Select Service</label>
+                    <select name="service" class="form-control" required>
+                        {% for s in services %}
+                            <option value="{{ s.id }}">{{ s.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Date</label>
+                    <input type="date" name="date" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Time Slot</label>
+                    <input type="time" name="time" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

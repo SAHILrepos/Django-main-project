@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Online Appointment Booking</h1>
+        <p class="col-md-8 fs-4">Quick, easy, and real-time scheduling for all our services.</p>
+        <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-lg">Book an Appointment</a>
+    </div>
+</div>
+
+<h3>Our Services</h3>
+<div class="row">
+    {% for service in services %}
+    <div class="col-md-4">
+        <div class="card p-3">
+            <h5>{{ service.name }}</h5>
+            <p>{{ service.description }}</p>
+            <small class="text-muted">Duration: {{ service.duration_minutes }} mins</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
